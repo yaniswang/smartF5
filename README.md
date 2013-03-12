@@ -10,6 +10,15 @@ Features:
 2. Support local file: file://
 3. Support multi system: Windows, Mac, Linux(64)
 
+How to use:
+========================
+
+1. Install the extention.
+2. Open your html page with chrome.
+3. Click the smartF5 icon in toolbar.
+4. Edit your resources.
+5. You will see the page reload smartly.
+
 License
 ================
 
