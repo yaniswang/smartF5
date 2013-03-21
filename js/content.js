@@ -13,11 +13,17 @@
         });
     }
 
+	//获得绝对路径
+	function getAbs(url){
+        var localPath = location;
+		if(!url.match(/^(https?:\/\/|\/)/i))return localPath.protocol+'//'+localPath.host+localPath.pathname.replace(/\\/g,'/').replace(/[^\/]+$/i,'')+url;
+		else return url;
+	}
     function scanUrl(){
         var arrDoms,dom,i,url;
         var reUrl = /^(https?|file):\/\//,
         //添加当前页
-        url = location.href;
+        url = getAbs(location.href);
         if(reUrl.test(url) === true){
             mapAllUrls[url] = {
                 type : 'html'
@@ -29,7 +35,7 @@
             dom = arrDoms[i];
             if((dom.type && /text\/css/i.test(dom.type)) ||
                 (dom.rel && /stylesheet/i.test(dom.rel))){
-                url = dom.href;
+                url = getAbs(dom.href);
                 
                 if(reUrl.test(url) === true){
                     mapAllUrls[url] = {
@@ -43,7 +49,7 @@
         arrDoms = doc.getElementsByTagName('script');
         for(var i = 0, c = arrDoms.length;i < c; i++){
             dom = arrDoms[i];
-            url = dom.src;
+            url = getAbs(dom.src);
             if(url){
                 if(reUrl.test(url) === true){
                     mapAllUrls[url] = {
