@@ -13,11 +13,12 @@ Features:
 How to use:
 ========================
 
-1. Install the extention.
-2. Open your html page with chrome.
-3. Click the smartF5 icon in toolbar.
-4. Edit your resources.
-5. You will see the page reload smartly.
+1. Install the extention: [https://chrome.google.com/webstore/detail/smartf5/pgglpnfdiigfapjinhfgnbckibpdbbeo](https://chrome.google.com/webstore/detail/smartf5/pgglpnfdiigfapjinhfgnbckibpdbbeo)
+2. Open plugin center: [chrome://extensions/](chrome://extensions/), and enable file url for smartF5.
+3. Open url or drag html file to chrome.
+4. Click the smartF5 icon in toolbar.
+5. Edit your resources: html, js, css.
+6. You will see the page reload smartly.
 
 License
 ================
