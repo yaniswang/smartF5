@@ -89,6 +89,16 @@
         mapUrlStatus = JSON.parse(savedMapUrlStatus);
     }
 
+    //获取URL开启状态
+    function getUrlStatus(url){
+        var urlStatus = mapUrlStatus[url];
+        if(urlStatus === undefined){
+            //file://默认开启
+            urlStatus = /^file:\/\//i.test(url);
+        }
+        return urlStatus;
+    }
+
     //添加监控
     function addWatch(tabId, arrUrls){
         mapTabUrls[tabId] = arrUrls;
@@ -160,7 +170,7 @@
     //注入JS脚本
     function onTabUpdated(tabId, changeInfo, tab){
         var tabStatus = changeInfo.status,
-            urlStatus = mapUrlStatus[tab.url];
+            urlStatus = getUrlStatus(tab.url);
         if(tabStatus === 'complete'){
             if(urlStatus === true){
                 mapTabStatus[tabId] = true;//标记当前TAB为启用状态
@@ -190,11 +200,10 @@
     function onBrowserActionClicked(tab){
         var tabId = tab.id,
             url = tab.url, 
-            urlStatus = mapUrlStatus[url] ? mapUrlStatus[url] : false;
+            urlStatus = getUrlStatus(url);
         if(urlStatus === true){
             //关闭
-            delete mapUrlStatus[url];
-            delete mapTabStatus[tabId];
+            mapUrlStatus[url] = mapTabStatus[tabId] = false;
         }
         else{
             //开启
