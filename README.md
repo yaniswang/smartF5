@@ -8,7 +8,7 @@ Features:
 
 1. Watch page resources: html, js, css, reload smartly.
 2. Support local file: file://
-3. Support multi system: Windows, Mac, Linux(64)
+3. Support multi system: Windows, Mac, Linux
 
 How to use:
 ========================
