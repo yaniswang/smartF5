@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "smartF5",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "Reload your page resources smartly: html, js, css",
 	"icons": {
 		"128": "img/icon128.png",
@@ -17,17 +17,21 @@
         "page": "background.html"
     },
     "plugins": [ 
-       {
-          "path": "plugin/npFileManager.dll",
-          "public": false
-       }, 
-       {
-          "path": "plugin/npFileManager.plugin",
-          "public": false
-       }, 
-       {
-          "path": "plugin/npFileManager.so",
-          "public": false
-       }
+        {
+            "path": "plugin/npFileManager.dll",
+            "public": false
+        },
+        {
+            "path": "plugin/npFileManager_64.so",
+            "public": false
+        },
+        {
+            "path": "plugin/npFileManager.so",
+            "public": false
+        },
+        {
+            "path": "plugin/npFileManager.plugin",
+            "public": false
+        }
     ]
 }

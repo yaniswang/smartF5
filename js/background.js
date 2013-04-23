@@ -68,6 +68,7 @@
     }
 
     function getFile(path){
+        path = decodeURI(path);
         path = path.replace(/^file:\/\//i,'');
         path = path.replace(/^\/([a-z]:\/)/i,'$1');
         if(fileManager.exists(path)){
