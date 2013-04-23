@@ -16,7 +16,7 @@
 	//获得绝对路径
 	function getAbs(url){
         var localPath = location;
-		if(!url.match(/^((https?|file):\/\/|\/)/i))return localPath.protocol+'//'+localPath.host+localPath.pathname.replace(/\\/g,'/').replace(/[^\/]+$/i,'')+url;
+		if(url && !url.match(/^((https?|file):\/\/|\/)/i))return localPath.protocol+'//'+localPath.host+localPath.pathname.replace(/\\/g,'/').replace(/[^\/]+$/i,'')+url;
 		else return url;
 	}
     function scanUrl(){
